@@ -1,24 +1,21 @@
 package com.github.aguilasa.fiis;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.opencsv.CSVParserBuilder;
+import com.opencsv.CSVReader;
+import com.opencsv.CSVReaderBuilder;
+import java.io.StringReader;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.opencsv.CSVParserBuilder;
-import com.opencsv.CSVReader;
-import com.opencsv.CSVReaderBuilder;
-
-import java.io.StringReader;
-import java.util.ArrayList;
 
 public class Main {
   public static void main(String[] args) {
@@ -63,7 +60,7 @@ public class Main {
       }
 
       List<Map<String, String>> filteredRecords = new ArrayList<>();
-      String[] headers = records.get(0); // Assuming the first row contains headers
+      String[] headers = records.get(0);
       Map<String, String> headerMap = new HashMap<>();
       headerMap.put("CAGR VALOR CORA 3 ANOS", "cagrValorCota3Anos");
       headerMap.put("PRECO", "preco");
@@ -125,5 +122,4 @@ public class Main {
   }
 }
 
-
-//https://aplicamais.com/calculadoras/fundos-imobiliarios
+// https://aplicamais.com/calculadoras/fundos-imobiliarios
