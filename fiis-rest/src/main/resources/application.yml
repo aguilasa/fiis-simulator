@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: fiis
+
+  data:
+    mongodb:
+      database: fiis_db
+      port: 27017
